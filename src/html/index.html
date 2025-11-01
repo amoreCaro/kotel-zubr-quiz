@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Page</title>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/main.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Flags CSS library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+</head>
+<body>
+  <div class="quiz">
+    <div class="quiz__head">
+      <div class="quiz__visual">
+        <img src="/images/quiz__visual.svg" alt="Візуальне зображення">
+      </div>
+      <span>
+        <b>Пройдіть тест</b>
+        та дізнайтесь, який котел підійде саме для вас. Дайте відповідь на декілька питань, це займе 1-2 хвилини.
+      </span>
+    </div>
+
+    <div class="quiz__progressbar">
+      <div class="quiz__progressbar-fill"></div>
+    </div>
+      <form class="quiz__form" >
+        <div class="quiz__content-wrapper">
+            <div class="quiz__fieldsets">
+              <!-- STEP 1 -->
+              <fieldset class="quiz__fieldset active" data-step="1">
+                <div class="quiz__form-content">
+                  <div class="quiz__description">
+                    <h4>Яка площа вашого приміщення? (м²)</h4>
+                    <p>Чим більша площа — тим потужніший котел потрібен. Це впливає на вибір і ціну.</p>
+                  </div>
+
+                  <div class="quiz__row">
+                    <div class="quiz__range">
+                      <input class="quiz__range-input" type="range" name="Area of your space" min="40" max="500" value="270" />
+                      <div class="quiz__range-bubble">
+                        <span>
+ 40 
+                        </span>
+                                                     
+                      </div>
+                      <div class="quiz__range-labels">
+                        <span class="quiz__range-label quiz__range-label--min">40</span>
+                        <span class="quiz__range-label quiz__range-label--max">500</span>
+                      </div>
+                    </div>
+
+                    <div class="quiz__image">
+                      <img src="images/quiz__image.jpg" alt="Зображення приміщення">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 2 -->
+             <fieldset class="quiz__fieldset" data-step="2">
+              <div class="quiz__form-content">
+                <div class="quiz__description">
+                  <h4>Який тип приміщення?</h4>
+                </div>
+
+                <div class="quiz__options">
+                  <div class="quiz__column">
+                    <label class="quiz__option">
+                      <input class="quiz__radio" type="radio" name="buildingType" value="private" />
+                      <span class="quiz__option-text">Приватний будинок</span>
+                    </label>
+
+                    <label class="quiz__option">
+                      <input class="quiz__radio" type="radio" name="buildingType" value="commercial" />
+                      <span class="quiz__option-text">Комерційне приміщення</span>
+                    </label>
+
+                  <label class="quiz__option quiz__option--custom">
+                    <input class="quiz__radio" type="radio" name="buildingType" value="custom" />
+                    <span class="quiz__option-text">Свій варіант</span>
+                    <input class="quiz__option-input" type="text" />
+                  </label>
+
+                  </div>
+
+                  <div class="quiz__column">
+                    <label class="quiz__option">
+                      <input class="quiz__radio" type="radio" name="buildingType" value="country" />
+                      <span class="quiz__option-text">Заміський будинок/дача</span>
+                    </label>
+
+                    <label class="quiz__option">
+                      <input class="quiz__radio" type="radio" name="buildingType" value="industrial" />
+                      <span class="quiz__option-text">Виробництво/Промисловий об’єкт</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+              <!-- STEP 3 -->
+              <fieldset class="quiz__fieldset" data-step="3">
+                <div class="quiz__form-content">
+                  <div class="quiz__description">
+                    <h4>Чи змонтована у вас система опалення?</h4>
+                  </div>
+
+                  <div class="quiz__options">
+                    <div class="quiz__column">
+                      <label class="quiz__option">
+                        <input class="quiz__radio" type="radio" name="heatingSystem" value="yes" />
+                        <span class="quiz__option-text">Так. Хочу замінити лише котел</span>
+                      </label>
+
+                      <label class="quiz__option">
+                        <input class="quiz__radio" type="radio" name="heatingSystem" value="additional" />
+                        <span class="quiz__option-text">Планую купити котел, як додатковий</span>
+                      </label>
+                    </div>
+
+                    <div class="quiz__column">
+                      <label class="quiz__option">
+                        <input class="quiz__radio" type="radio" name="heatingSystem" value="new" />
+                        <span class="quiz__option-text">Все буду робити з нуля</span>
+                      </label>
+                       <label class="quiz__option quiz__option--custom">
+                        <input class="quiz__radio" type="radio" name="heatingSystem" value="custom" />
+                        <span class="quiz__option-text">Власний варіант</span>
+                        <input class="quiz__option-input" type="text" />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 4 -->
+              <fieldset class="quiz__fieldset" data-step="4">
+                <div class="quiz__form-content">
+                  <div class="quiz__description">
+                    <h4>Який бюджет плануєте при покупці котла?</h4>
+                  </div>
+
+                  <div class="quiz__row">
+                    <div class="quiz__range">
+                      <input class="quiz__range-input" type="range" name="Your budget" min="16500" max="95500" value="56000" />
+                      <div class="quiz__range-bubble">56000</div>
+                      <div class="quiz__range-labels">
+                        <span class="quiz__range-label quiz__range-label--min">16500</span>
+                        <span class="quiz__range-label quiz__range-label--max">95500</span>
+                      </div>
+                    </div>
+
+                    <div class="quiz__image">
+                      <img src="images/quiz__image-4.png" alt="Зображення котла">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 5 -->
+              <fieldset class="quiz__fieldset" data-step="5">
+                <div class="quiz__form-content">
+                  <div class="quiz__description">
+                    <h4>Оберіть подарунок, який закріпиться у разі замовлення</h4>
+                  </div>
+
+                  <div class="quiz__gifts">
+                    <div class="quiz__gift">
+                        <div class="quiz__gift-tick">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </div>
+                      <input type="radio" name="gift" value="Регулятор тяги" checked>
+                      <div class="quiz__gift-image">
+                        <img src="images/quiz__gift-img--1.png" alt="">
+                      </div>
+                      <div class="quiz__gift-description">
+                        <span>Регулятор тяги</span>
+                      </div>
+                    </div>
+                    <div class="quiz__gift">
+                      <div class="quiz__gift-tick">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      <input type="radio" name="gift" value="Аналоговий термометр">
+                      <div class="quiz__gift-image">
+                        <img src="images/quiz__gift-img--2.jpg" alt="">
+                      </div>
+                      <div class="quiz__gift-description">
+                        <span>Аналоговий термометр</span>
+                      </div>
+                    </div>
+                    <div class="quiz__gift">
+                      <div class="quiz__gift-tick">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      <input type="radio" name="gift" value="Цифровий термометр">
+                      <div class="quiz__gift-image">
+                        <img src="images/quiz__gift-img--3.webp" alt="">
+                      </div>
+                      <div class="quiz__gift-description">
+                        <span>Цифровий термометр</span>
+                      </div>
+                    </div>
+                    <div class="quiz__gift">
+                      <div class="quiz__gift-tick">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      <input type="radio" name="gift" value="Знижковий сертифікат на 1000 грн">
+                      <div class="quiz__gift-image">
+                        <img src="images/quiz__gift-img--4.png" alt="">
+                      </div>
+                      <div class="quiz__gift-description">
+                        <span>Знижковий сертифікат на 1000 грн</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 6 -->
+              <fieldset class="quiz__fieldset" data-step="6">
+                <div class="quiz__form-content">
+                  <div class="quiz__description">
+                    <h4>На коли плануєте замовити котел?</h4>
+                  </div>
+
+                  <div class="quiz__options">
+                    <div class="quiz__column">
+                      <label class="quiz__option">
+                        <input class="quiz__radio" type="radio" name="orderTime" value="month" />
+                        <span class="quiz__option-text">Протягом місяця</span>
+                      </label>
+
+                      <label class="quiz__option">
+                        <input class="quiz__radio" type="radio" name="orderTime" value="soon" />
+                        <span class="quiz__option-text">Якнайшвидше</span>
+                      </label>
+                    </div>
+
+                    <div class="quiz__column">
+                      <label class="quiz__option">
+                        <input class="quiz__radio" type="radio" name="orderTime" value="year" />
+                        <span class="quiz__option-text">До кінця року</span>
+                      </label>
+
+                      <label class="quiz__option">
+                        <input class="quiz__radio" type="radio" name="orderTime" value="credit" />
+                        <span class="quiz__option-text">Залежить чи є у вас розстрочка</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 7 -->
+            <fieldset class="quiz__fieldset" data-step="7">
+              <div class="quiz__form-content">
+                <div class="quiz__description quiz__description--form">
+                  <h4 class="quiz__form-title">Вітаю! Ви відповіли на всі запитання!</h4>
+                  <p class="quiz__form-text">
+                    Залиште Ваш номер телефону, і наші спеціалісти підберуть котел згідно ваших параметрів
+                    та зателефонують протягом дня.
+                  </p>
+                </div>
+
+                <div class="quiz__contact-form quiz__form">
+                  <!-- Поле Ім’я -->
+                  <div class="quiz__form-group">
+                    <label class="quiz__label" for="name">Ваше ім’я</label>
+                    <input
+                      class="quiz__input quiz__input--name"
+                      type="text"
+                      id="name"
+                      name="name"
+                      pattern="[A-Za-zА-Яа-яЇїІіЄєҐґ'’\-]+\s?[A-Za-zА-Яа-яЇїІіЄєҐґ'’\-]*"
+                      title="Введіть лише літери (можна апостроф або дефіс)"
+                    />
+                    <p class="quiz__error quiz__error--name">Вкажіть, будь ласка, ім’я</p>
+                  </div>
+
+                  <!-- Поле Телефон -->
+                  <div class="quiz__form-group">
+                    <label class="quiz__label" for="phone">Ваш телефон</label>
+                    <input
+                      class="quiz__input quiz__input--phone"
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="(__) ___-__-__"
+                      autocomplete="off"
+                    />
+                    <div class="quiz__error quiz__error--phone">Вкажіть, будь ласка, номер телефону</div>
+                  </div>
+                </div>
+
+                <p class="quiz__note">
+                  При замовленні, закріпимо за вами обраний подарунок або знижку,
+                  навіть якщо купувати плануєте не зараз.
+                </p>
+              </div>
+            </fieldset>
+
+               <!-- STEP 8 -->
+              <fieldset class="quiz__fieldset" data-step="8">
+                <div class="quiz__success-wrapper">
+                  <div class="quiz__form-content">
+                    <div class="quiz__message--success">
+                      <span>
+                        Зараз готуємо для вас підбір котла. Спеціаліст зателефонує або надішле варіанти у месенджер протягом 5 хвилин. Подарунок або знижка — вже зарезервовані
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+        </div>
+
+        <div class="quiz__bottom">
+          <div class="quiz__stepcounter">
+            <span class="quiz__stepcounter-text">Крок: 1/7</span>
+          </div>
+
+          <div class="quiz__buttons">
+            <button class="quiz__button quiz__button--prev">
+              <svg viewBox="0 0 18 18" fill="none">
+                <path d="M14.25 9H3.75" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M9 3.75L3.75 9L9 14.25" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+
+            <button class="quiz__button quiz__button--next">
+              <div class="quiz__button-light"></div>
+              <span class="quiz__button-text">Далі</span>
+              <svg viewBox="0 0 18 18" fill="none">
+                <path d="M3.75 9L14.25 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M9 14.25L14.25 9L9 3.75" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+            <button class="quiz__button quiz__button--submit" type="submit" id="submit">
+              <div class="quiz__button-light"></div>
+              <span>Відправити</span>
+            </button>
+
+          </div>
+        </div>
+      </form>
+  </div>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
